@@ -53,3 +53,40 @@
 (filter (partial above-threshold? 5) [1 2 3 4 5 6 7])
 ;; returns 6 7 using a partial instead. the partial binds the 5 into the function.
 
+
+;; define a vector of maps of user data
+(def users [
+            {:username "kyle"
+             :balance 175.00
+             :member-since "2009-04-16"}
+            
+            {:username "zak"
+             :balance 12.95
+             :member-since "2009-02-01"}
+            
+            {:username "rob"
+             :balance 98.50
+             :member-since "2009-03-30"}
+])
+
+;; lookup function retrieving a user by name
+(defn username [user]
+  (user :username))
+
+;; lookup function retrieving a user by balance
+(defn balance [user]
+  (user :balance))
+
+;; higher order function that takes a sorter function to order the data
+(defn sorter-using [ordering-fn]
+  (fn [users]
+    (sort-by ordering-fn users)))
+
+;; sorter that uses the balance to list users
+(def poorest-first (sorter-using balance))
+
+;; sorter that uses the name to list users
+(def alphabetically (sorter-using username))
+
+ 
+

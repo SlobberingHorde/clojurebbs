@@ -1,4 +1,4 @@
-(ns first)
+(ns chapter3)
 
 (defn basic-item-total [price quantity]
   "Calculates the price times the quantity"

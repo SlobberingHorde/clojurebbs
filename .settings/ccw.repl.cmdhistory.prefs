@@ -1,0 +1,2 @@
+cmdhistory=["(basic-item-total 1.0 2)" "(with-line-item-conditions basic-item-total 0 1)" "(total-cost 5 3)" "(total-cost 2)" "(doc total-cost)" "(total-all-numbers 1 2 3)" "(count-down 10000000)" "(count-downr 100000)" "(every? true? bools)" "(some true? bools)"]
+eclipse.preferences.version=1
